@@ -53,7 +53,7 @@ export default class ModalDropdown extends Component {
     touchableHiglightunderlayColor: PropTypes.string,
     dropdownShadow: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     activeOpacity: PropTypes.number,
-    multiSelectDropdown: PropTypes.bool,
+    multiSelect: PropTypes.bool,
     adjustFrame: PropTypes.func,
     renderRow: PropTypes.func,
     renderSeparator: PropTypes.func,
@@ -380,7 +380,7 @@ export default class ModalDropdown extends Component {
   };
 
   _onRowPress(rowData, sectionID, rowID, highlightRow) {
-    const {onSelect, renderButtonText, onDropdownWillHide, multiSelectDropdown} = this.props;
+    const {onSelect, renderButtonText, onDropdownWillHide, multiSelect} = this.props;
     if (!onSelect || onSelect(rowID, rowData) !== false) {
       highlightRow(sectionID, rowID);
       const value = renderButtonText && renderButtonText(rowData) || rowData.toString();
@@ -392,7 +392,7 @@ export default class ModalDropdown extends Component {
       });
     }
     if (!onDropdownWillHide || onDropdownWillHide() !== false) {
-      multiSelectDropdown ? null : (
+      multiSelect ? null : (
       this.setState({
         showDropdown: false
       })
