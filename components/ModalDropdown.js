@@ -50,7 +50,7 @@ export default class ModalDropdown extends Component {
     dropdownStyle: PropTypes.oneOfType([PropTypes.number, PropTypes.object, PropTypes.array]),
     dropdownTextStyle: PropTypes.oneOfType([PropTypes.number, PropTypes.object, PropTypes.array]),
     dropdownTextHighlightStyle: PropTypes.oneOfType([PropTypes.number, PropTypes.object, PropTypes.array]),
-    touchableHiglightUnderlayColor: PropTypes.string,
+    touchableHighlightUnderlayColor: PropTypes.string,
     dropdownShadow: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     activeOpacity: PropTypes.number,
     multiSelect: PropTypes.bool,
@@ -314,7 +314,7 @@ export default class ModalDropdown extends Component {
   }
 
   _renderRow = (rowData, sectionID, rowID, highlightRow) => {
-    const {renderRow, dropdownTextStyle, dropdownTextHighlightStyle, accessible, touchableHiglightUnderlayColor} = this.props;
+    const {renderRow, dropdownTextStyle, dropdownTextHighlightStyle, accessible, touchableHighlightUnderlayColor} = this.props;
     const {selectedIndex} = this.state;
     const key = `row_${rowID}`;
     const highlighted = rowID == selectedIndex;
@@ -342,7 +342,7 @@ export default class ModalDropdown extends Component {
       switch (row.type.displayName) {
         case 'TouchableHighlight': {
           return (
-            <TouchableHighlight underlayColor={touchableHiglightUnderlayColor} {...props}>
+            <TouchableHighlight underlayColor={touchableHighlightUnderlayColor} {...props}>
               {children}
             </TouchableHighlight>
           );
@@ -373,7 +373,7 @@ export default class ModalDropdown extends Component {
       }
     }
     return (
-      <TouchableHighlight underlayColor={touchableHiglightUnderlayColor} {...preservedProps}>
+      <TouchableHighlight underlayColor={touchableHighlightUnderlayColor} {...preservedProps}>
         {row}
       </TouchableHighlight>
     );
