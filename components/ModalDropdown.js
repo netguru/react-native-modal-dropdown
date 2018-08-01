@@ -391,7 +391,7 @@ export default class ModalDropdown extends Component {
         selectedIndex: rowID
       });
     }
-    if (!onDropdownWillHide || onDropdownWillHide() !== false) {
+    if (!onDropdownWillHide || onDropdownWillHide(!this.state.showDropdown) !== false) {
       multiSelect ? null : (
       this.setState({
         showDropdown: false
