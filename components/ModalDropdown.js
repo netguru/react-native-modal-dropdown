@@ -322,7 +322,7 @@ export default class ModalDropdown extends Component {
       (<Text style={[
         styles.rowText,
         dropdownTextStyle,
-        highlighted && styles.highlightedRowText,
+        highlighted && touchableHighlightUnderlayColor || styles.highlightedRowText,
         highlighted && dropdownTextHighlightStyle
       ]}
       >
