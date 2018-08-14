@@ -316,11 +316,13 @@ export default class ModalDropdown extends Component {
       positionStyle.right = rightSpace - this._buttonFrame.w;
     }
 
+    const buttonFrameHeight = this._buttonFrame.h + 2;
+
     const newPositionStyle = {
       height: dropdownHeight,
       top: showInBottom
-      ? this._buttonFrame.y + this._buttonFrame.h
-      : Math.max(0, this._buttonFrame.y - dropdownHeight),
+        ? this._buttonFrame.y + buttonFrameHeight
+        : Math.max(0, this._buttonFrame.y - dropdownHeight),
       right: this._buttonFrame.x
     };
 
