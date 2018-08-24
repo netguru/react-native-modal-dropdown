@@ -322,7 +322,7 @@ export default class ModalDropdown extends Component {
       height: dropdownHeight,
       top: showInBottom
         ? this._buttonFrame.y + buttonFrameHeight
-        : Math.max(0, this._buttonFrame.y - dropdownHeight),
+        : Math.max(0, this._buttonFrame.y - (dropdownHeight + 2)),
       right: this._buttonFrame.x
     };
 
