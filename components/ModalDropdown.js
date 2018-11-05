@@ -96,7 +96,7 @@ export default class ModalDropdown extends Component {
       shadowOpacity: 0.25,
       shadowColor: 'black',
       shadowRadius: 15,
-      shadowOffset: { width: 0, height: 20 }
+      shadowOffset: { width: 0, height: 25 }
     }
   };
 
